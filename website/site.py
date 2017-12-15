@@ -1,51 +1,9 @@
 import get_data
 
-warframe_db =get_data.connect_db("db/warframe.sqlite")
+warframe_db = get_data.connect_db("db/warframe.sqlite")
 
-"""def my_table(dicts, keys):
-    table = "<table><tr>"
-
-    for i in range(len(keys)):
-        table = table + "<th>" + keys[i] + "</th>"
-    table = table + "</tr>"
-
-    table += "<tr>"
-
-    for i in range(len(dicts)):
-        dict = dicts[i]
-        checkbox_v = dict['Name']
-
-        table += "<input type=\"checkbox\" value=\"" + checkbox_v + "\">"
-        table += "<label for=\"" + checkbox_v + "\">"
-
-        for j in range(len(keys)):
-            v = dict[keys[j]]
-            table += "<td>" + v + "</td>"
-
-        table += "</label>"
-
-    table += "</tr></table>"
-    return table
-
-
-def my_div(dicts, keys, my_class):
-    table = my_table(dicts, keys)
-    div = "<div class=\"" + my_class + "\">" + table
-    div += "</div>"
-    return div
-
-
-def home_page(bandeau, weapons, user):
-    page = "<html><body>"
-    page += bandeau
-    page += weapons
-    page += user
-    page += "</body></html>"
-    return page
-
-"""
 def my_table(table, keys):
-    rows = get_data.select(warframe_db,table)
+    rows = get_data.select(table)
 
     page = "<table><tr>"
     for key in keys:
@@ -66,10 +24,39 @@ def my_div(table, keys, div_class):
     div += "</div>"
     return div
 
-def home_page(bandeau, weapons, user):
+
+#create a div perfectly formed for the home_page (all 3)
+def create_bandeau(types, subcategory):
+    my_div = ""
+
+    return my_div
+
+def create_weapons(table, keys):
+    my_div = ""
+
+    return my_div
+
+def create_user(table, keys):
+    my_div = ""
+
+    return my_div
+
+def page(bandeau, weapons, user):
     page = "<html><body>"
     page += bandeau
     page += weapons
     page += user
     page += "</body></html>"
     return page
+
+#open a new_session with an apppropriate sesion_id(number)
+def launch_session(session_id):
+    html = ""
+
+    return html
+
+#close the session
+def close_session(session_id):
+    html = ""
+
+    return html
